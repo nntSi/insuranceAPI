@@ -7,8 +7,8 @@ router.post('/users/register', async (req, res) => {
   const { username, password, title, firstname, lastname, email, position, department, mobile, tax_id, token } = req.body;
   
   connection.query(
-    "SELECT COUNT(id) AS userCheck FROM users WHERE username = ? OR email = ? OR tax_id = ?",
-    [username, email, tax_id],
+    "SELECT COUNT(id) AS userCheck FROM users WHERE username = ? OR email = ? ",
+    [username, email],
     (err, results, fields) => {
       if (err) {
         console.log("Error while inserting a user into database", err);
@@ -16,6 +16,7 @@ router.post('/users/register', async (req, res) => {
       }
       /* console.log(typeof(results[0].userCheck)); */
       if (results[0].userCheck >= 1){
+        console.log("Unable to register because this username or email already exists");
         res.status(200).json({haveUser: results[0].userCheck, registerStatus: "Unable to register because this username or email already exists"});
         return;
       }

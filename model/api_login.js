@@ -13,7 +13,8 @@ router.post('/login', async (req, res) => {
         return res.status(400).send();
       }
       if (result[0].login_state < 1) {
-        return res.json({ login_state: result[0].login_state, message:"Username or password is wrong!!" });
+        console.log("Username or password is wrong!!");
+        return res.json({ login_state: result[0].login_state, message:"Username or password is wrong!!", state:false });
       }
       /* return res.json({ login_state: result[0].login_state, message:"Login sucessfully!!" }); */
       connection.query(
@@ -24,7 +25,8 @@ router.post('/login', async (req, res) => {
             console.log(err);
             return res.status(400).send();
           }
-          return res.json({userdata: results})
+          console.log("Login Successfull!!");
+          return res.json({userdata: results, message:"Login successful!!", state:true});
         }
       );
     }
