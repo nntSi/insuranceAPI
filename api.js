@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
-router.use(require("./model/api_users"));
-router.use(require("./model/api_login"));
-
+router.use(require("./services/api_users"));
+router.use(require("./services/api_login"));
+router.use(require("./services/api_claim"));
 module.exports = router;
