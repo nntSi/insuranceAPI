@@ -20,5 +20,7 @@ db.sequelize = sequelize;
 //import model
 db.users = require("./models/users")(sequelize, Sequelize);
 db.claim = require("./models/claim")(sequelize, Sequelize);
+db.company = require("./models/company")(sequelize, Sequelize);
+db.inspector = require("./models/inspector")(sequelize, Sequelize);
 
 module.exports = db;

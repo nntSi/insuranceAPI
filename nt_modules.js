@@ -12,8 +12,7 @@ module.exports.chckAccess = async (req, res) => {
     }
   })
   if (chck < 1){
-    console.log("You can't access this method");
-    return res.json({ message: "You can't access this method", status: false })
+    return false;
   }
   return true;
 };
