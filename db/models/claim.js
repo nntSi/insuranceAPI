@@ -16,6 +16,7 @@ module.exports = ( sequelize , Sequelize ) => {
         inspector_mobile: { type: Sequelize.STRING(255), allowNull: false, field: 'inspector_mobile'},
         date_dry: {type: Sequelize.STRING(255), allowNull: false, field: 'date_dry'},
         time_dry: {type: Sequelize.STRING(255), allowNull: false, field: 'time_dry'},
+        sts: {type: Sequelize.INTEGER(11), allowNull: false, field: 'sts'},
     },
     {
         tableName: 'claim' 
