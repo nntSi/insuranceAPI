@@ -22,5 +22,8 @@ db.users = require("./models/users")(sequelize, Sequelize);
 db.claim = require("./models/claim")(sequelize, Sequelize);
 db.company = require("./models/company")(sequelize, Sequelize);
 db.inspector = require("./models/inspector")(sequelize, Sequelize);
+db.employee = require("./models/employee")(sequelize, Sequelize);
+db.province = require("./models/province")(sequelize, Sequelize);
+db.districts = require("./models/districts")(sequelize, Sequelize);
 
 module.exports = db;

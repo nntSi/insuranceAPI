@@ -17,6 +17,12 @@ module.exports = ( sequelize , Sequelize ) => {
         date_dry: {type: Sequelize.STRING(255), allowNull: false, field: 'date_dry'},
         time_dry: {type: Sequelize.STRING(255), allowNull: false, field: 'time_dry'},
         sts: {type: Sequelize.INTEGER(11), allowNull: false, field: 'sts'},
+        province: {type: Sequelize.INTEGER(11), allowNull: false, field: 'province'},
+        district: {type: Sequelize.INTEGER(11), allowNull: false, field: 'district'},
+        customer_claim_mobile: {type: Sequelize.STRING(10), allowNull: false, field: 'customer_claim_mobile'},
+        customer_claim_name: {type: Sequelize.STRING(255), allowNull: false, field: 'customer_claim_name'},
+        license_plate: { type: Sequelize.STRING(50), allowNull: false, field: 'license_plate'},
+        brand_car: {type: Sequelize.STRING(255), allowNull: false, field: 'brand_car'}
     },
     {
         tableName: 'claim' 

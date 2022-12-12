@@ -4,10 +4,11 @@ const router = express.Router();
 const {
   CreateClaim, 
   DataClaimPage, 
-  getDataTable, 
-  searchDataTable, 
+  getDataTable,
   deleteClaim,
-  readClaimBySVHcode } = require('../controller/ClaimController');
+  readClaimBySVHcode,
+  showDistrictByPRID,
+  updateClaimForPDF } = require('../controller/ClaimController');
 
 router.get('/claim/page', async (req, res) => {
   DataClaimPage(req, res);
@@ -29,5 +30,11 @@ router.get('/claim/readdata/:svhcode', async (req, res) => {
   readClaimBySVHcode(req, res);
 });
 
+router.get('/claim/getdistrict/:prvid', async (req, res) => {
+  showDistrictByPRID(req,res);
+});
+router.patch('/claim/updateforpdf/:svhcode' , async (req, res) => {
+  updateClaimForPDF(req, res);
+});
 module.exports = router;
 
