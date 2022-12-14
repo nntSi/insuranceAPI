@@ -162,7 +162,7 @@ module.exports.showDistrictByPRID = async (req, res) => {
 };
 
 module.exports.updateClaimForPDF = async (req, res) => {
-  console.log(req.body.brand_car)
+  /* console.log(req.body.brand_car) */
   try{
     await claim.update({
       province: req.body.province,

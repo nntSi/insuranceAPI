@@ -6,4 +6,5 @@ router.use(require("./services/api_login"));
 router.use(require("./services/api_claim"));
 router.use(require("./services/api_location"));
 router.use(require("./services/api_inspector"));
+router.use(require("./services/api_report"));
 module.exports = router;
